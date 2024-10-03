@@ -8,7 +8,7 @@ project(
         DESCRIPTION "Affine transformation"
 )
 
-add_library(${PROJECT_NAME} STATIC affine_transformation.c)
+add_library(${PROJECT_NAME} STATIC raffine.c)
 
 if(UNIX AND NOT APPLE)
         target_link_libraries(${PROJECT_NAME} PRIVATE m)
@@ -20,14 +20,14 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES Generic)
         add_subdirectory(test/runit)
         add_executable(${PROJECT_NAME}_test
                 test/runit/src/runit.c
-                affine_transformation.c
+                raffine.c
                 test/test.c)
         target_link_libraries(${PROJECT_NAME}_test PUBLIC runit ${PROJECT_NAME})
 endif()
 
 set(FILES_FOR_FORMATTING
-        affine_transformation.c
-        affine_transformation.h
+        raffine.c
+        raffine.h
         test/test.c
 )
 

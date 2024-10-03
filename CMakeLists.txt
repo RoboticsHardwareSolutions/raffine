@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 
 set(CMAKE_C_STANDARD 11)
 project(
-        AffineTransformation
+        raffine
         VERSION 0.0.1
         LANGUAGES C
         DESCRIPTION "Affine transformation"
@@ -22,7 +22,7 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES Generic)
                 test/runit/src/runit.c
                 affine_transformation.c
                 test/test.c)
-        target_link_libraries(${PROJECT_NAME}_test PUBLIC runit AffineTransformation)
+        target_link_libraries(${PROJECT_NAME}_test PUBLIC runit ${PROJECT_NAME})
 endif()
 
 set(FILES_FOR_FORMATTING
